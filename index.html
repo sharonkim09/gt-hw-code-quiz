@@ -23,7 +23,7 @@
     <nav class="nav">
         <!-- <a class="nav-link active">HighScores</a>
         <a class="nav-link">Timer</a> -->
-        <button type="button" class="btn btn-link">View Highscores</button>
+        <button type="button" class="btn btn-link" id="highScores-button">View Highscores</button>
         <div class="float-right">Time Left:<span class="time"></span></div>
     </nav>
 
@@ -47,13 +47,19 @@
     </div>
 
     <!-- Question Section -->
-    <!-- <div> -->
+    <div id="quiz-section">
         <!-- <h1>Questions</h1> -->
         <!-- https://www.w3schools.com/bootstrap4/bootstrap_button_groups.asp
         utilize bootstrap class of btn-group-vertical -->
-        <!-- <div class="btn-group-vertical"></div> -->
-        <!-- <h1>Correct answers</h1> -->
-    <!-- </div> -->
+        <div class="btn-group-vertical" id="choices">
+            <!-- display 4 choices -->
+            <button class="btn btn-primary" id="choice1">Choice1</button>
+            <button class="btn btn-primary" id="choice2">Choice2</button>
+            <button class="btn btn-primary" id="choice3">Choice3</button>
+            <button class="btn btn-primary" id="choice4">Choice4</button>
+        </div>
+    </div>
+    <!-- should have correct or wrong here.... -->
 
     <!-- End of Quiz Section -->
     <!-- <div> 
@@ -85,7 +91,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
-        <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
