@@ -13,17 +13,19 @@
 <!-- for the index...
         - layout of all pages but hide when not in use
         -need:
-        nav with highscores and timer, quiz info and button
+        -nav with highscores and timer, quiz info and button
         -div homepage quiz title and p tag
         --new divquestions layout but will use dom manipulation
         - new div for end of quiz using form 
         - new div for high scores with two buttons-->
 <body>
     <nav class="nav">
-        <a class="nav-link active" href="#">HighScores</a>
-        <a class="nav-link" href="#">Timer</a>
+        <!-- <a class="nav-link active">HighScores</a>
+        <a class="nav-link">Timer</a> -->
+        <button type="button" class="btn btn-outline-light">View Highscores</button>
+        <div class="float-right">Time Left:</div>
     </nav>
-    <main>
+
         <div class="container">
             <div class="row">
                 <div class=col-md-12>
@@ -45,9 +47,9 @@
             <!-- Buttons for back and clear -->
             <!-- <button type="button">back</button>
             <button type="button">Clear</button> -->
-
         </div>
-    </main>
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
         </script>
