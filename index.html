@@ -18,37 +18,61 @@
         --new divquestions layout but will use dom manipulation
         - new div for end of quiz using form 
         - new div for high scores with two buttons-->
+
 <body>
     <nav class="nav">
         <!-- <a class="nav-link active">HighScores</a>
         <a class="nav-link">Timer</a> -->
-        <button type="button" class="btn btn-outline-light">View Highscores</button>
+        <button type="button" class="btn btn-link">View Highscores</button>
         <div class="float-right">Time Left:</div>
     </nav>
 
-        <div class="container">
-            <div class="row">
-                <div class=col-md-12>
-                    <h1>Code Quiz Challenge</h1>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class=col-md-12>
+                <h1>Code Quiz Challenge</h1>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <p>Try to answer the following code-related questions within the time limit. Keep in mind that
-                        incorrect answers wll penalize your scoretime by ten seconds!</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class=col-md-4>
-                    <button type="button">Start Quiz</button>
-                </div>
-            </div>
-            
-            <!-- Buttons for back and clear -->
-            <!-- <button type="button">back</button>
-            <button type="button">Clear</button> -->
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>Try to answer the following code-related questions within the time limit. Keep in mind that
+                    incorrect answers wll penalize your scoretime by ten seconds!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class=col-md-4>
+                <button type="button" class="btn btn-primary">Start Quiz</button>
+            </div>
+        </div>
+    </div>
 
+    <!-- Question Section -->
+    <div>
+        <!-- <h1>Questions</h1> -->
+        <!-- https://www.w3schools.com/bootstrap4/bootstrap_button_groups.asp
+        utilize bootstrap class of btn-group-vertical -->
+        <!-- <div class="btn-group-vertical"></div> -->
+        <!-- <h1>Correct answers</h1> -->
+    </div>
+
+    <!-- End of Quiz Section -->
+    <div>
+        <h1>Your Score:</h1>
+        <!-- score -->
+        <!-- some form?? -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+    <!-- High Scores Section -->
+    <div>
+        <h1>Highscores: </h1>
+        <!-- list scores stored -->
+        <button type="button" class="btn btn-primary">Back</button>
+        <button type="button" class="btn btn-primary">Clear</button>
+    </div>
+    <!-- Buttons for back and clear -->
+    <!-- <button type="button">back</button>
+            <button type="button">Clear</button> -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
