@@ -20,7 +20,7 @@ var secondsLeft = 75;
 var highScoresEl= document.querySelector("#highScores-button");
 //set initial index of question to 0 
 var questionIndex = 0;
-
+var timerRunning = false;
 
 
 // define questions in a single object with key-value
@@ -70,24 +70,43 @@ var questions = [
 ];
 //now can be accessed as index
 var currentQuestion = questions[questionIndex]
-
 //Define functions
 // function startQuiz() {
 //   console.log("Hello");
 // }
 
+//timer starts and displays question... 
 //from class activity 8
 function startQuiz() {
+  //timer is off and  need to turn on when starting
+  timerRunning = true;
   var timerInterval = setInterval(function () {
     secondsLeft--;
     timeEl.textContent = secondsLeft;
     //stops timer from running in background
     if (secondsLeft === 0) {
+      //need to stop timer when 0 
+      timerRunning= false;
       clearInterval(timerInterval);
+      //need to display result section
     }
   }, 1000);
+  displayQuestions();
 }
 
+function displayQuestions(){
+  //when i start quiz, everything should be hidden except quiz
+  //need to display question choices on the button
+  mainEl.style = "display:none";
+  resultSectionEl.style = "display:none";
+  highScoresEl.style ="display:none";
+
+  questionsEl.textContent = currentQuestion.question;
+  // choice1El.textContent = currentQuestion.choice1;
+  // choice2El.textContent = currentQuestion.choice2;
+  // choice3El.textContent = currentQuestion.choice3;
+  // choice4El.textContent = currentQuestion.choice4;
+}
 
 //TO-DO list
 //need to create a function for question to compare user's answer and correct answer
