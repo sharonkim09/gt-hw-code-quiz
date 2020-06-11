@@ -57,6 +57,7 @@ var questions = [
 ];
 //now can be accessed as index
 var currentQuestion = questions[questionIndex]
+
 //Define functions
 // function startQuiz() {
 //   console.log("Hello");
@@ -73,6 +74,22 @@ function startQuiz() {
     }
   }, 1000);
 }
+
+
+//TO-DO list
+//need to create a function for question to compare user's answer and correct answer
+
+// need to make main page hide when button clicked and show questions and when viewing highscores
+
+// still need to workout highscores
+
+//need to make clear and back buttons work 
+
+//need to use localStorage to save initials  
+
+//need to restart quiz by going back to main page
+
+
 
 // startQuiz();
 //Call Functions
