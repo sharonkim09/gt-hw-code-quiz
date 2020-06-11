@@ -1,8 +1,18 @@
 //Define variables
 // console.log("Hello")
 //work on start button and clock starts when clicked..
-var startButton = document.getElementById("start-button");
-var mainPage = document.getElementById("main-page");
+var startButtonEl = document.querySelector("#start-button");
+var mainEl = document.querySelector("#main-page");
+var quizSectionEl = document.querySelector("#quiz-section");
+var questionsEl= document.querySelector("#choices");
+var choice1El= document.querySelector("#choice1");
+var choice2El= document.querySelector("#choice2");
+var choice3El= document.querySelector("#choice3");
+var choice4El= document.querySelector("#choice4");
+var resultSectionEl= document.querySelector("#result-section");
+var highscoreEl= document.querySelector("#highscore-section")
+var backButtonEl= document.querySelector("#back-button");
+var clearButtonEl= document.querySelector("#clear-button");
 //timer var
 var timeEl = document.querySelector(".time");
 var secondsLeft = 75;
@@ -10,6 +20,9 @@ var secondsLeft = 75;
 var highScoresEl= document.querySelector("#highScores-button");
 //set initial index of question to 0 
 var questionIndex = 0;
+
+
+
 // define questions in a single object with key-value
 var questions = [
   {
@@ -95,5 +108,5 @@ function startQuiz() {
 //Call Functions
 // setTime();
 //Add Events
-startButton.addEventListener("click", startQuiz);
+startButtonEl.addEventListener("click", startQuiz);
 // console.log(startButton);
