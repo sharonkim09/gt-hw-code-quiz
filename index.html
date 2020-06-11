@@ -12,68 +12,53 @@
 </head>
 
 <body>
-    <nav class="nav">
-        <!-- <a class="nav-link active">HighScores</a>
+        <nav class="nav">
+            <!-- <a class="nav-link active">HighScores</a>
         <a class="nav-link">Timer</a> -->
-        <button type="button" class="btn btn-link" id="highScores-button">View Highscores</button>
-        <div class="float-right">Time Left:<span class="time"></span></div>
-    </nav>
+            <button type="button" class="btn btn-link" id="highScores-button">View Highscores</button>
+            <div class="float-right">Time Left:<span class="time"></span></div>
+        </nav>
+    
+        <div class="container">
+        <div id="home-page">
+            <h1>Code Quiz Challenge</h1>
+            <p>Try to answer the following code-related questions within the time limit. Keep in mind that
+                incorrect answers wll penalize your scoretime by ten seconds!</p>
+            <button type="button" class="btn btn-primary" id="start-button">Start Quiz</button>
+        </div>
 
-    <div class="container" id="main-page">
-        <div class="row">
-            <div class=col-md-12>
-                <h1>Code Quiz Challenge</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <p>Try to answer the following code-related questions within the time limit. Keep in mind that
-                    incorrect answers wll penalize your scoretime by ten seconds!</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class=col-md-4>
-                <button type="button" class="btn btn-primary" id="start-button">Start Quiz</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Question Section -->
-    <div id="quiz-section">
-        <!-- <h1>Questions</h1> -->
-        <!-- https://www.w3schools.com/bootstrap4/bootstrap_button_groups.asp
+        <!-- Question Section -->
+        <div id="quiz-section">
+            <!-- <h1>Questions</h1> -->
+            <!-- https://www.w3schools.com/bootstrap4/bootstrap_button_groups.asp
         utilize bootstrap class of btn-group-vertical -->
-        <div class="btn-group-vertical" id="choices">
-            <!-- display 4 choices -->
-            <button class="btn btn-primary" id="choice1">Choice1</button>
-            <button class="btn btn-primary" id="choice2">Choice2</button>
-            <button class="btn btn-primary" id="choice3">Choice3</button>
-            <button class="btn btn-primary" id="choice4">Choice4</button>
+            <div class="btn-group-vertical" id="choices">
+                <!-- display 4 choices -->
+                <button class="btn btn-primary" id="choice1">Choice1</button>
+                <button class="btn btn-primary" id="choice2">Choice2</button>
+                <button class="btn btn-primary" id="choice3">Choice3</button>
+                <button class="btn btn-primary" id="choice4">Choice4</button>
+            </div>
+        </div>
+        <!-- should have correct or wrong here.... -->
+
+        <!-- End of Quiz Section -->
+        <div id="endOfQuiz-section">
+            <h3>All Done!</h3>
+            <h4>Your final score is <span id="quiz-score"><span>.</h4>
+            <label for="initials">Enter initials</label>
+            <input type="text" placeholder="initials">
+            <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+        </div>
+
+        <!-- High Scores Section -->
+        <div id="highscore-section">
+            <h1>Highscores: </h1>
+            <!-- list scores stored  -->
+            <button type="button" class="btn btn-primary" id="back-button">Back</button>
+            <button type="button" class="btn btn-primary" id="clear-button">Clear</button>
         </div>
     </div>
-    <!-- should have correct or wrong here.... -->
-
-    <!-- End of Quiz Section -->
-    <div id="endOfQuiz-section"> 
-        <h3>All Done!</h3>
-        <h4>Your final score is <span id="quiz-score"><span>.</h4>
-        <label for="initials">Enter initials</label>
-        <input type ="text" placeholder="initials">
-        <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
-    </div>
-
-    <!-- High Scores Section -->
-    <div id="highscore-section">
-        <h1>Highscores: </h1>
-         <!-- list scores stored  -->
-        <button type="button" class="btn btn-primary" id="back-button">Back</button>
-        <button type="button" class="btn btn-primary" id="clear-button">Clear</button>
-    </div>
-
-
-    <!-- Buttons for back and clear -->
-    <!-- <button type="button">back</button>
-            <button type="button">Clear</button> -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
