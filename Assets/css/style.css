@@ -1,3 +1,6 @@
-#quiz-section{
+#quiz-section {
+    display: none;
+}
+#endOfQuiz-section{
     display: none;
 }
