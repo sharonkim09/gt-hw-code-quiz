@@ -6,7 +6,10 @@ var mainPage = document.getElementById("main-page");
 //timer var
 var timeEl = document.querySelector(".time");
 var secondsLeft = 75;
-
+//highscore variable
+var highScoresEl= document.querySelector("#highScores-button");
+//set initial index of question to 0 
+var questionIndex = 0;
 // define questions in a single object with key-value
 var questions = [
   {
@@ -52,14 +55,15 @@ var questions = [
     answer: "choice4",
   },
 ];
-
+//now can be accessed as index
+var currentQuestion = questions[questionIndex]
 //Define functions
-function startQuiz() {
-  console.log("Hello");
-}
+// function startQuiz() {
+//   console.log("Hello");
+// }
 
 //from class activity 8
-function setTime() {
+function startQuiz() {
   var timerInterval = setInterval(function () {
     secondsLeft--;
     timeEl.textContent = secondsLeft;
@@ -70,9 +74,9 @@ function setTime() {
   }, 1000);
 }
 
-startQuiz();
+// startQuiz();
 //Call Functions
-setTime();
+// setTime();
 //Add Events
 startButton.addEventListener("click", startQuiz);
 // console.log(startButton);
