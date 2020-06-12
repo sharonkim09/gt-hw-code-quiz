@@ -71,7 +71,7 @@ var questions = [
   },
 ];
 //now can be accessed as index
-var currentQuestion = questions[questionIndex]
+var currentQuestion = questions[questionIndex];
 //Define functions
 // function startQuiz() {
 //   console.log("Hello");
@@ -104,7 +104,7 @@ function displayQuestions(){
   mainEl.style = "display:none";
   resultSectionEl.style = "display:none";
   highScoresEl.style ="display:none";
-
+  currentQuestion = questions[questionIndex];
   quizQuestionsEl.textContent = currentQuestion.question;
   choice1El.textContent = currentQuestion.choice1;
   choice2El.textContent = currentQuestion.choice2;
@@ -116,6 +116,8 @@ function displayQuestions(){
     event.preventDefault;
     var choiceBtn = event.target;
     //console.log(choiceBtn);
+    //next question
+    questionIndex++;
 
 
     //now to compare the selected answer to the answer and display appropriate message
@@ -127,6 +129,9 @@ function displayQuestions(){
       console.log("Wrong!")
       responseEl.textContent="Wrong!";
     }
+    //function to 
+
+displayQuestions();
   }
 
 //make the user be able to click quiz answers
