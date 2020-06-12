@@ -14,6 +14,7 @@ var resultSectionEl= document.querySelector("#result-section");
 var highscoreEl= document.querySelector("#highscore-section")
 var backButtonEl= document.querySelector("#back-button");
 var clearButtonEl= document.querySelector("#clear-button");
+var responseEl = document.querySelector("#response")
 //timer var
 var timeEl = document.querySelector(".time");
 var secondsLeft = 75;
@@ -120,8 +121,11 @@ function displayQuestions(){
     //now to compare the selected answer to the answer and display appropriate message
     if(choiceBtn.getAttribute("id")===currentQuestion.answer){
       console.log("correct!")
+      //instead of console logging, set a variable and display on page...
+      responseEl.textContent="Correct!";
     } else {
       console.log("Wrong!")
+      responseEl.textContent="Wrong!";
     }
   }
 
