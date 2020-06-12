@@ -4,6 +4,7 @@
 var startButtonEl = document.querySelector("#start-button");
 var mainEl = document.querySelector("#main-page");
 var quizSectionEl = document.querySelector("#quiz-section");
+var quizQuestionsEl= document.querySelector("#questions");
 var questionsEl= document.querySelector("#choices");
 var choice1El= document.querySelector("#choice1");
 var choice2El= document.querySelector("#choice2");
@@ -101,11 +102,11 @@ function displayQuestions(){
   resultSectionEl.style = "display:none";
   highScoresEl.style ="display:none";
 
-  questionsEl.textContent = currentQuestion.question;
-  // choice1El.textContent = currentQuestion.choice1;
-  // choice2El.textContent = currentQuestion.choice2;
-  // choice3El.textContent = currentQuestion.choice3;
-  // choice4El.textContent = currentQuestion.choice4;
+  quizQuestionsEl.textContent = currentQuestion.question;
+  choice1El.textContent = currentQuestion.choice1;
+  choice2El.textContent = currentQuestion.choice2;
+  choice3El.textContent = currentQuestion.choice3;
+  choice4El.textContent = currentQuestion.choice4;
 }
 
 //TO-DO list
