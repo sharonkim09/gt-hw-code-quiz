@@ -156,39 +156,31 @@ function results() {
     mainEl.style = "display:none";
     quizSectionEl.style = "display:none";
     highScoresSectionEl.style = "display:none";
-    resultSectionEl.style = "display:block"
+    resultSectionEl.style = "display:block";
 }
-//event listener for submit to show results and allow user to enter value
-// var highScores = [];
-// submitButtonEl.addEventListener("click", function(){
-//   // var initials = prompt("Enter values")
-//   var initials = getInputValue();
-//   highScores.push({initials:initials , score:secondsLeft})
-//   //from 6/12 morning warmup
-//   localStorage.setItem("score", JSON.stringify(highScores))
-
-
-// })
+    submitButtonEl.addEventListener("click", function(){
+      viewHighScores();
+    // var initials = prompt("Enter values")
+    var initials = document.getElementById("initials").value;
+console.log(initials);
+//    highScores.push({initials:initials , score:secondsLeft})
+   //from 6/12 morning warmup
+   localStorage.setItem("score", JSON.stringify(highScores))
+   console.log(JSON.stringify(highScores))
+ })
 
 //view high scores
 function viewHighScores(){
   resultSectionEl.style = "display:none"
   quizSectionEl.style= "display:none"
   highScoresSectionEl.innerHTML="";
+
 }
 
 //make the user be able to click quiz answers
 questionsEl.addEventListener("click", function () {
   selectedChoice(event, currentQuestion);
 });
-
-//when we reach end of quiz, hide all and show result section
-// function results(){
-// quizScoreEl.textContent = secondsLeft;
-// }
-
-//
-
 // startQuiz();
 // setTime();
 //Add Events
