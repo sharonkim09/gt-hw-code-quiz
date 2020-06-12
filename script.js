@@ -180,6 +180,11 @@ function viewHighScores() {
   highScoresSectionEl.style = "display:block";
 }
 
+function mainPage(){
+  mainEl.style= "display:block";
+  highScoresSectionEl.style = "display-block";
+}
+
 
 //Add Events
 startButtonEl.addEventListener("click", startQuiz);
@@ -188,6 +193,6 @@ questionsEl.addEventListener("click", function () {
   selectedChoice(event, currentQuestion);
 });
 highScoresSectionEl.addEventListener("click", viewHighScores);
-backButtonEl.addEventListener("click", main);
+backButtonEl.addEventListener("click", mainPage);
 // clearButtonEl.addEventListener("click");
 // console.log(startButton);
