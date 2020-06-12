@@ -17,7 +17,7 @@ var clearButtonEl = document.querySelector("#clear-button");
 var responseEl = document.querySelector("#response");
 var quizScoreEl = document.querySelector("#quiz-score");
 var timeRemainingEl = document.querySelector("#time");
-var submitButtonEl= document.querySelector("#submit-button");
+var submitButtonEl = document.querySelector("#submit-button");
 //timer var
 var timeEl = document.querySelector(".time");
 var secondsLeft = 75;
@@ -92,6 +92,7 @@ function startQuiz() {
       //need to stop timer when 0
       timerRunning = false;
       clearInterval(timerInterval);
+      results();
       //need to display result section
     }
   }, 1000);
@@ -140,7 +141,6 @@ function selectedChoice(event, currentQuestion) {
     // console.log()
     //hide questions and show results section
     results();
-
   } else {
     displayQuestions();
   }
@@ -149,50 +149,43 @@ function selectedChoice(event, currentQuestion) {
 // console.log(end)
 
 //to display results section with time and string displayed and hidng other content
-//still working around
+//empty array will store initials
+
 function results() {
   quizScoreEl.textContent = secondsLeft;
   console.log(secondsLeft);
-    mainEl.style = "display:none";
-    quizSectionEl.style = "display:none";
-    highScoresSectionEl.style = "display:none";
-    resultSectionEl.style = "display:block"
+  mainEl.style = "display:none";
+  quizSectionEl.style = "display:none";
+  highScoresSectionEl.style = "display:none";
+  resultSectionEl.style = "display:block";
 }
-//event listener for submit to show results and allow user to enter value
-// var highScores = [];
-// submitButtonEl.addEventListener("click", function(){
-//   // var initials = prompt("Enter values")
-//   var initials = getInputValue();
-//   highScores.push({initials:initials , score:secondsLeft})
-//   //from 6/12 morning warmup
-//   localStorage.setItem("score", JSON.stringify(highScores))
+function getInputValue() {
+  var userInitials = document.getElementById("initials").value;
+  return userInitials;
+}
+submitButtonEl.addEventListener("click", function () {
+  // var initial = getInputValue();
+  // //  console.log(initials);
+  // //from 6/12 morning warmup
+  // localStorage.setItem("score", JSON.stringify(highScores));
+  // console.log(JSON.stringify(highScores));
 
-
-// })
+  viewHighScores();
+});
 
 //view high scores
-function viewHighScores(){
-  resultSectionEl.style = "display:none"
-  quizSectionEl.style= "display:none"
-  highScoresSectionEl.innerHTML="";
+function viewHighScores() {
+  resultSectionEl.style = "display:none";
+  quizSectionEl.style = "display:none";
+  highScoresSectionEl.innerHTML = "";
 }
 
+//Add Events
+startButtonEl.addEventListener("click", startQuiz);
 //make the user be able to click quiz answers
 questionsEl.addEventListener("click", function () {
   selectedChoice(event, currentQuestion);
 });
-
-//when we reach end of quiz, hide all and show result section
-// function results(){
-// quizScoreEl.textContent = secondsLeft;
-// }
-
-//
-
-// startQuiz();
-// setTime();
-//Add Events
-startButtonEl.addEventListener("click", startQuiz);
 highScoresSectionEl.addEventListener("click", viewHighScores);
 backButtonEl.addEventListener("click", main);
 // clearButtonEl.addEventListener("click");
