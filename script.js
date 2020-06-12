@@ -128,8 +128,10 @@ function displayQuestions(){
     } else {
       console.log("Wrong!")
       responseEl.textContent="Wrong!";
+      //deduct time
+      secondsLeft = secondsLeft - 10;
     }
-    //function to 
+    
 
 displayQuestions();
   }
