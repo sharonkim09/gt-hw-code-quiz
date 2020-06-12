@@ -18,11 +18,9 @@ var responseEl = document.querySelector("#response");
 var quizScoreEl = document.querySelector("#quiz-score");
 var timeRemainingEl = document.querySelector("#time");
 var submitButtonEl = document.querySelector("#submit-button");
-//timer var
-var timeEl = document.querySelector(".time");
 var secondsLeft = 75;
 //highscore variable
-//var highScoresEl= document.querySelector("#highScores-button");
+var highScoresEl= document.querySelector("#highScores-button");
 //set initial index of question to 0
 var questionIndex = 0;
 var timerRunning = false;
@@ -86,7 +84,7 @@ function startQuiz() {
   timerRunning = true;
   var timerInterval = setInterval(function () {
     secondsLeft--;
-    timeEl.textContent = secondsLeft;
+    timeRemainingEl.textContent = secondsLeft;
     //stops timer from running in background
     if (secondsLeft === 0) {
       //need to stop timer when 0
@@ -176,6 +174,7 @@ submitButtonEl.addEventListener("click", function () {
 //view high scores
 function viewHighScores() {
   resultSectionEl.style = "display:none";
+  mainEl.style="display:none";
   quizSectionEl.style = "display:none";
   highScoresSectionEl.style = "display:block";
 }
@@ -194,5 +193,6 @@ questionsEl.addEventListener("click", function () {
 });
 highScoresSectionEl.addEventListener("click", viewHighScores);
 backButtonEl.addEventListener("click", mainPage);
+highScoresEl.addEventListener("click",viewHighScores)
 // clearButtonEl.addEventListener("click");
 // console.log(startButton);
