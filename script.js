@@ -17,6 +17,7 @@ var clearButtonEl = document.querySelector("#clear-button");
 var responseEl = document.querySelector("#response");
 var quizScoreEl = document.querySelector("#quiz-score");
 var timeRemainingEl = document.querySelector("#time");
+var submitButtonEl= document.querySelector("#submit-button");
 //timer var
 var timeEl = document.querySelector(".time");
 var secondsLeft = 75;
@@ -155,6 +156,25 @@ function results() {
     mainEl.style = "display:none";
     quizSectionEl.style = "display:none";
     highScoresSectionEl.style = "display:none";
+    resultSectionEl.style = "display:block"
+}
+//event listener for submit to show results and allow user to enter value
+// var highScores = [];
+// submitButtonEl.addEventListener("click", function(){
+//   // var initials = prompt("Enter values")
+//   var initials = getInputValue();
+//   highScores.push({initials:initials , score:secondsLeft})
+//   //from 6/12 morning warmup
+//   localStorage.setItem("score", JSON.stringify(highScores))
+
+
+// })
+
+//view high scores
+function viewHighScores(){
+  resultSectionEl.style = "display:none"
+  quizSectionEl.style= "display:none"
+  highScoresSectionEl.innerHTML="";
 }
 
 //make the user be able to click quiz answers
@@ -173,4 +193,7 @@ questionsEl.addEventListener("click", function () {
 // setTime();
 //Add Events
 startButtonEl.addEventListener("click", startQuiz);
+highScoresSectionEl.addEventListener("click", viewHighScores);
+backButtonEl.addEventListener("click", main);
+// clearButtonEl.addEventListener("click");
 // console.log(startButton);
