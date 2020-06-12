@@ -9,3 +9,7 @@ Should use dom to style below
 #highscore-section{
     display: none;
 } */
+
+nav{
+    color: blue;
+}
