@@ -115,12 +115,22 @@ function displayQuestions(){
     event.preventDefault;
     var choiceBtn = event.target;
     //console.log(choiceBtn);
+
+
+    //now to compare the selected answer to the answer and display appropriate message
+    if(choiceBtn.getAttribute("id")===currentQuestion.answer){
+      console.log("correct!")
+    } else {
+      console.log("Wrong!")
+    }
   }
 
 //make the user be able to click quiz answers
 questionsEl.addEventListener("click", function(){
   selectedChoice(event, currentQuestion)
 })
+
+
 //TO-DO list
 //need to create a function for question to compare user's answer and correct answer
 
