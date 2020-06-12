@@ -1,4 +1,4 @@
-# JS Code Quiz
+# JavaScript Code Quiz
 ## Description
 This was a homework assignment from Georgia Tech Full-Stack Program. This application is a timed coding quiz and will feature dynamically updated HTML and CSS powered by JavaScript.It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
 

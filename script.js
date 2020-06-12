@@ -12,6 +12,7 @@ var choice3El = document.querySelector("#choice3");
 var choice4El = document.querySelector("#choice4");
 var resultSectionEl = document.querySelector("#result-section");
 var highScoresSectionEl = document.querySelector("#highscore-section");
+var scoresEl = document.querySelector("#scores")
 var backButtonEl = document.querySelector("#back-button");
 var clearButtonEl = document.querySelector("#clear-button");
 var responseEl = document.querySelector("#response");
@@ -23,7 +24,9 @@ var secondsLeft = 75;
 var highScoresEl= document.querySelector("#highScores-button");
 //set initial index of question to 0
 var questionIndex = 0;
-var timerRunning = false;
+var timePenalty=15;
+var timerInterval;
+
 
 // define questions in a single object with key-value
 var questions = [
@@ -72,27 +75,15 @@ var questions = [
 ];
 //now can be accessed as index
 var currentQuestion = questions[questionIndex];
-//Define functions
-// function startQuiz() {
-//   console.log("Hello");
-// }
 
 //timer starts and displays question...
 //from class activity 8
 function startQuiz() {
   //timer is off and  need to turn on when starting
-  timerRunning = true;
-  var timerInterval = setInterval(function () {
+  timerInterval = setInterval(function () {
     secondsLeft--;
     timeRemainingEl.textContent = secondsLeft;
     //stops timer from running in background
-    if (secondsLeft === 0) {
-      //need to stop timer when 0
-      timerRunning = false;
-      clearInterval(timerInterval);
-      results();
-      //need to display result section
-    }
   }, 1000);
   displayQuestions();
 }
@@ -113,7 +104,7 @@ function displayQuestions() {
   choice3El.textContent = currentQuestion.choice3;
   choice4El.textContent = currentQuestion.choice4;
 }
-//now to let user to select the questions buttons
+//let user select the questions' buttons
 function selectedChoice(event, currentQuestion) {
   event.preventDefault;
   var choiceBtn = event.target;
@@ -123,14 +114,14 @@ function selectedChoice(event, currentQuestion) {
 
   //now to compare the selected answer to the answer and display appropriate message
   if (choiceBtn.getAttribute("id") === currentQuestion.answer) {
-    console.log("correct!");
+    // console.log("correct!");
     //instead of console logging, set a variable and display on page...
     responseEl.textContent = "Correct!";
   } else {
-    console.log("Wrong!");
+    // console.log("Wrong!");
     responseEl.textContent = "Wrong!";
     //deduct time
-    secondsLeft = secondsLeft - 10;
+    secondsLeft = secondsLeft - timePenalty;
   }
 
   //error on last question ....
@@ -151,16 +142,18 @@ function selectedChoice(event, currentQuestion) {
 
 function results() {
   quizScoreEl.textContent = secondsLeft;
-  console.log(secondsLeft);
-  mainEl.style = "display:none";
-  quizSectionEl.style = "display:none";
-  highScoresSectionEl.style = "display:none";
-  resultSectionEl.style = "display:block";
+  // console.log(secondsLeft);
+  setTimeout(function(){
+    mainEl.style = "display:none";
+    quizSectionEl.style = "display:none";
+    highScoresSectionEl.style = "display:none";
+    resultSectionEl.style = "display:block";
+  },1000)
 }
-function getInputValue() {
-  var userInitials = document.getElementById("initials").value;
-  return userInitials;
-}
+// function getInputValue() {
+//   var userInitials = document.getElementById("initials").value;
+//   return userInitials;
+// }
 submitButtonEl.addEventListener("click", function () {
   // var initial = getInputValue();
   // //  console.log(initials);
@@ -177,6 +170,7 @@ function viewHighScores() {
   mainEl.style="display:none";
   quizSectionEl.style = "display:none";
   highScoresSectionEl.style = "display:block";
+  scoresEl.innerHTML="";
 }
 
 function mainPage(){
@@ -191,7 +185,7 @@ startButtonEl.addEventListener("click", startQuiz);
 questionsEl.addEventListener("click", function () {
   selectedChoice(event, currentQuestion);
 });
-highScoresSectionEl.addEventListener("click", viewHighScores);
+// highScoresSectionEl.addEventListener("click", viewHighScores);
 backButtonEl.addEventListener("click", mainPage);
 highScoresEl.addEventListener("click",viewHighScores)
 // clearButtonEl.addEventListener("click");
