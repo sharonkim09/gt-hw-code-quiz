@@ -177,8 +177,9 @@ submitButtonEl.addEventListener("click", function () {
 function viewHighScores() {
   resultSectionEl.style = "display:none";
   quizSectionEl.style = "display:none";
-  highScoresSectionEl.innerHTML = "";
+  highScoresSectionEl.style = "display:block";
 }
+
 
 //Add Events
 startButtonEl.addEventListener("click", startQuiz);
