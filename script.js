@@ -94,7 +94,9 @@ function startQuiz() {
   }, 1000);
   displayQuestions();
 }
-
+/**
+ * When starting quiz, other sections are hidden and quiz questions will be displayed
+ */
 function displayQuestions(){
   //when i start quiz, everything should be hidden except quiz
   //need to display question choices on the button
@@ -108,7 +110,17 @@ function displayQuestions(){
   choice3El.textContent = currentQuestion.choice3;
   choice4El.textContent = currentQuestion.choice4;
 }
+//now to let user to select the questions buttons 
+  function selectedChoice(event, currentQuestion){
+    event.preventDefault;
+    var choiceBtn = event.target;
+    //console.log(choiceBtn);
+  }
 
+//make the user be able to click quiz answers
+questionsEl.addEventListener("click", function(){
+  selectedChoice(event, currentQuestion)
+})
 //TO-DO list
 //need to create a function for question to compare user's answer and correct answer
 
