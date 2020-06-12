@@ -1,6 +1,6 @@
 //Define variables
 // console.log("Hello")
-//work on start button and clock starts when clicked..
+
 var startButtonEl = document.querySelector("#start-button");
 var mainEl = document.querySelector("#main-page");
 var quizSectionEl = document.querySelector("#quiz-section");
@@ -15,6 +15,7 @@ var highscoreEl= document.querySelector("#highscore-section")
 var backButtonEl= document.querySelector("#back-button");
 var clearButtonEl= document.querySelector("#clear-button");
 var responseEl = document.querySelector("#response")
+var quizScoreEl =document.querySelector("#quiz-score");
 //timer var
 var timeEl = document.querySelector(".time");
 var secondsLeft = 75;
@@ -23,6 +24,7 @@ var highScoresEl= document.querySelector("#highScores-button");
 //set initial index of question to 0 
 var questionIndex = 0;
 var timerRunning = false;
+
 
 
 // define questions in a single object with key-value
@@ -104,6 +106,7 @@ function displayQuestions(){
   mainEl.style = "display:none";
   resultSectionEl.style = "display:none";
   highScoresEl.style ="display:none";
+
   currentQuestion = questions[questionIndex];
   quizQuestionsEl.textContent = currentQuestion.question;
   choice1El.textContent = currentQuestion.choice1;
@@ -131,34 +134,39 @@ function displayQuestions(){
       //deduct time
       secondsLeft = secondsLeft - 10;
     }
-    
+    //error on last question .... 
+    //fixing..still working..
+    if(questionIndex === questions.length){
+    timeEl.textContent= secondsLeft;
+      clearInterval(timerInterval);
+    }else{
+      displayQuestions();
+        }
+      }
+      
+// console.log(end)
 
-displayQuestions();
-  }
+//to display results section with time and string displayed and hidng other content
+//still working around
+function finished(){
+  mainEl.style = "display:none";
+  quizSectionEl.style = "display:none";
+  quizScoreEl.textContent= secondsLeft;
+}
 
 //make the user be able to click quiz answers
 questionsEl.addEventListener("click", function(){
   selectedChoice(event, currentQuestion)
 })
 
+//when we reach end of quiz, hide all and show result section
+function results(){
+quizScoreEl.textContent = secondsLeft;
+}
 
-//TO-DO list
-//need to create a function for question to compare user's answer and correct answer
-
-// need to make main page hide when button clicked and show questions and when viewing highscores
-
-// still need to workout highscores
-
-//need to make clear and back buttons work 
-
-//need to use localStorage to save initials  
-
-//need to restart quiz by going back to main page
-
-
+//
 
 // startQuiz();
-//Call Functions
 // setTime();
 //Add Events
 startButtonEl.addEventListener("click", startQuiz);
