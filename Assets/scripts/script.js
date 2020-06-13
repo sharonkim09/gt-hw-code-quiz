@@ -128,7 +128,7 @@ function selectedChoice(event, currentQuestion) {
   //error on last question will get negative time....
   if (questionIndex === questions.length) {
 
-    clearButtonEl(timerInterval);
+    clearInterval(timerInterval);
     //hide questions and show results section
     results();
   } else {
@@ -171,6 +171,8 @@ function viewHighScores() {
   quizSectionEl.style = "display:none";
   highScoresSectionEl.style = "display:block";
   scoresEl.innerHTML = "";
+  //need to parse string back into object
+  //and append to highscores
 }
 
 function mainPage() {
@@ -189,4 +191,8 @@ questionsEl.addEventListener("click", function () {
 // highScoresSectionEl.addEventListener("click", viewHighScores);
 backButtonEl.addEventListener("click", mainPage);
 highScoresEl.addEventListener("click", viewHighScores);
-// clearButtonEl.addEventListener("click");
+clearButtonEl.addEventListener("click",function(){
+  highScoresStored=[];
+  // console.log(highScoresStored)
+  // viewHighScores();
+});
