@@ -2,6 +2,8 @@
 ## Description
 This was a homework assignment from Georgia Tech Full-Stack Program. This application is a timed coding quiz and will feature dynamically updated HTML and CSS powered by JavaScript.It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
 
+Once user clicks start, timer will run and the answer feedback will be displayed as correct or wrong. If wrong timer get subtracted by 10 seconds. Quiz ends if timer reaches 0 or when last question is answered. The score recorded will be the time left. User can see results and save their initials in the highscore panel. User can take the quiz again by going back or clear their scores. 
+
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
@@ -20,7 +22,12 @@ The following image demonstrates the application functionality:
 ![code quiz](./Assets/04-web-apis-homework-demo.gif)
 
 My screenshots for the code quiz.
-![code quiz](./Assets/images/mainpage.png)
+![mainpage](./Assets/images/mainpage.png)
+![questions screen](./Assets/images/question.png)
+![results screen](./Assets/images/result.png)
+![highscores screen](./Assets/images/highscores.png)
+
+
 
 ## Credits
 This design was designed by the curriculum team. The instructions were provided to me by GT Full Stack Coding Program.
