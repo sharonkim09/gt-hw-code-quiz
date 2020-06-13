@@ -19,7 +19,8 @@ var quizScoreEl = document.querySelector("#quiz-score");
 var timeRemainingEl = document.querySelector("#time");
 var submitButtonEl = document.querySelector("#submit-button");
 var initialsInputEl = document.querySelector("#initials");
-var secondsLeft = 75;
+//
+var secondsLeft = 60;
 //High Score variables
 var highScoresEl = document.querySelector("#highScores-button");
 var highScoresStored = [];
@@ -126,6 +127,7 @@ function selectedChoice(event, currentQuestion) {
 
   //error on last question will get negative time....
   if (questionIndex === questions.length) {
+    
     clearButtonEl(timerInterval);
     //hide questions and show results section
     results();
