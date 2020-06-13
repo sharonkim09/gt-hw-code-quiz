@@ -20,7 +20,7 @@ var timeRemainingEl = document.querySelector("#time");
 var submitButtonEl = document.querySelector("#submit-button");
 var initialsInputEl = document.querySelector("#initials");
 //
-var secondsLeft = 60;
+var secondsLeft = 75;
 //High Score variables
 var highScoresEl = document.querySelector("#highScores-button");
 var highScoresStored = [];
@@ -159,7 +159,7 @@ submitButtonEl.addEventListener("click", function () {
   // localStorage.setItem("score", JSON.stringify(highScores));
   // console.log(JSON.stringify(highScores));
   //start from the beginning
-  secondsLeft=60;
+  secondsLeft=75;
   questionIndex=0;
   viewHighScores();
 });
