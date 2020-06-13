@@ -1,14 +1,13 @@
-/* 
-Should use dom to style below
+
 #quiz-section {
     display: none;
 }
-#endOfQuiz-section{
+#result-section{
     display: none;
 }
 #highscore-section{
     display: none;
-} */
+}
 
 nav{
     color: blue;
