@@ -19,6 +19,9 @@ This was a homework assignment from Georgia Tech Full-Stack Program. This applic
 The following image demonstrates the application functionality:
 ![code quiz](./Assets/04-web-apis-homework-demo.gif)
 
+My screenshots for the code quiz.
+![code quiz](./Assets/images/mainpage.png)
+
 ## Credits
 This design was designed by the curriculum team. The instructions were provided to me by GT Full Stack Coding Program.
 
