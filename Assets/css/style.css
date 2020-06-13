@@ -1,4 +1,4 @@
-
+/* Hiding quiz, result, and highscore section */
 #quiz-section {
     display: none;
 }
@@ -8,10 +8,11 @@
 #highscore-section{
     display: none;
 }
-
 nav{
     color: blue;
 }
+/* centered all body elements */
 .container{
 text-align: center;
+padding:25px;
 }

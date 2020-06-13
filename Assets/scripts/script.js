@@ -84,7 +84,7 @@ function startQuiz() {
   timerInterval = setInterval(function () {
     secondsLeft--;
     timeRemainingEl.textContent = secondsLeft;
-    if (secondsLeft === 0) {
+    if (secondsLeft <= 0) {
       clearInterval(timerInterval);
       results();
     }
@@ -127,7 +127,7 @@ function selectedChoice(event, currentQuestion) {
 
   //error on last question will get negative time....
   if (questionIndex === questions.length) {
-    
+
     clearButtonEl(timerInterval);
     //hide questions and show results section
     results();
@@ -178,8 +178,9 @@ function mainPage() {
   highScoresSectionEl.style = "display:none";
 }
 
-//Events used
 
+
+//Events used
 startButtonEl.addEventListener("click", startQuiz);
 //make the user be able to click quiz answers
 questionsEl.addEventListener("click", function () {
